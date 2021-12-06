@@ -1,13 +1,167 @@
+<!DOCTYPE html>
 <html>
+	<head>
+		<meta content="utf-8" http-equiv="encoding">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+		<style>
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+h1{
+	font-weight: bold;
+    font-family: 'Montserrat', italic;
+    font-size: 50px;
+    color: #577f86;
+    text-shadow: 3px 3px rgb(163, 161, 161);
+    margin-bottom: 5px;
+}
+body{
+    background: #ddafaf9d;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family:"Quicksand";
+    text-align: center;
+}
+input[type="file"]{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+input[type="submit"]{
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+label#upload-btn{
+    background: #cc8084;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    vertical-align: middle;
+    height: 60px;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0px 20px;
+    cursor: pointer;
+    transition: all ease-out 200ms;
+}
+
+label#upload-btn:not(.chosen):hover{
+    background: #ca676c;
+    box-shadow: 0 0 10px 0 #e28b8f;
+}
+
+.img{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px 0 0;
+    font-size: 1.5em;
+}
+
+label#upload-btn.chosen{
+    background: #e28b8f
+}
+
+label#submit-btn{
+    background: #bd686d;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    vertical-align: middle;
+    height: 60px;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0px 20px;
+    cursor: pointer;
+    transition: all ease-out 200ms;
+}
+.img2{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0 0 10px;
+    font-size: 1.5em;
+}
+label#submit-btn:not(.chosen):hover{
+    background: #d38282;
+    box-shadow: 0 0 10px 0 #e28b8f;
+}
+.img3{
+    width: 100px;
+    height: 100px;
+}
+.wrapper{
+  margin:auto;
+  width: 500px;
+  background: #b4cace;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.wrapper form{
+  width: 300px;
+  height: 167px;
+  display: flex;
+  cursor: pointer;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 2px dashed #577f86;
+}
+		</style>
+	</head>
+
 	<body>
 		<center>
 			<h1> Secure File Storage Using Hybrid Cryptography </h1><br><br>
-			<form action = "/download_data" method = "POST" enctype = "multipart/form-data">
-				<input type = "file" name = "file" required/>
-				<br><br><input type = "Submit"/>
-			</form>
-			<br><h4>A Project by:</h4>
-			<h5>Shivang Srivastava<br>B.Tech (CSE)<br>GE-152010678</h5>
+			
+			<div class="wrapper">
+				<h3> Select the right key to continue </h3>
+				<form action = "/download_data" method = "POST" enctype = "multipart/form-data">
+				<label for="upload" id="upload-btn"> 
+					 <ion-icon class="img" name="key-outline"></ion-icon>
+					<span id = "text">Enter Key</span>
+				</label> 
+				<input type = "file" name = "file" id="upload">
+			<br><br>
+			<label for="submit" id="submit-btn"> 
+			   <span id = "text">Submit</span>
+			   <ion-icon class="img2" name="arrow-up-circle-outline"></ion-icon>
+			   <input type = "submit" name="upload" id="submit">
+		   </label>
+		   </form>
+		   </div>
+		
 		</center>
+		<script>
+			const input = document.getElementById("upload")
+			const text = document.getElementById("text")
+			const btn = document.getElementById("upload-btn")
+		
+			input.addEventListener("change", () =>{
+				const path = input.value.split("\\")
+				const filename = path[path.length - 1]
+		
+				text.innerText = filename ? filename : "Choose file"
+				if(filename)
+					btn.classList.add("chosen")
+				else
+					btn.classList.remove("chosen")
+			})
+			
+		</script>
 	</body>
 </html>
