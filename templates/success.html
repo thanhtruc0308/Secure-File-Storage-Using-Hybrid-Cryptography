@@ -1,16 +1,90 @@
+<!DOCTYPE html>
 <html>
+	<head>
+	<meta content="utf-8" http-equiv="encoding">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+		<style>
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+h1{
+	font-weight: bold;
+    font-family: 'Montserrat', italic;
+    font-size: 60px;
+    color: #577f86;
+    text-shadow: 3px 3px rgb(163, 161, 161);
+    margin-bottom: 5px;
+}
+a {
+font-family: 'Montserrat', italic;
+font-size: 30px;
+color: black;
+padding: 0px 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+gap: 50px;
+}
+p{
+    font-weight: bold;
+    font-family: 'Montserrat', italic;
+    font-size: 50px;
+    color: black;
+    margin:0 20px 0 0;
+}
+body{
+    background: #ddafaf9d;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family:"Quicksand";
+    text-align: center;
+}
+.btn {
+	background: #d1898d;
+    color:black;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    vertical-align: middle;
+    height: 60px;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 0px 20px;
+    cursor: pointer;
+    transition: all ease-out 200ms;
+	border: solid black;
+}
+
+.btn:hover {
+	background: #ca676c;
+    box-shadow: 0 0 10px 0 #e28b8f;}
+.img3{
+    width: 100px;
+    height: 100px;
+}
+
+
+		</style>
+	</head>
 	<body>
 		<center>
 			<h1> Secure File Storage Using Hybrid Cryptography </h1><br><br>
-			<b><p style="color:green; font-size:50px">SUCCESS</p></b>
+			<b><p>SUCCESS</p></b>
+			<ion-icon class="img3" name="cloud-done-outline"></ion-icon>
+
 			<table>
 				<tr>
-					<td><a href='return-key/My_Key.pem' target="blank"><button>Download Key</button></a></td>
-					<td><a href='home'><button>Back to HOME</button></a></td>
+					<td><a href='return-key/My_Key.pem' target="blank"><button class = "btn">Download Key</a></button></td>
+					<td><a href='home'><button class = "btn" >Back to HOME</a></button></td>
 				</tr>
 			</table>
-			<br><h4>A Project by:</h4>
-			<h5>Shivang Srivastava<br>B.Tech (CSE)<br>GE-152010678</h5>
 		</center>
 	</body>
 </html>
