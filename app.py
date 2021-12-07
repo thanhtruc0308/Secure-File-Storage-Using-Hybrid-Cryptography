@@ -98,6 +98,7 @@ def upload_file():
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
 			return start_encryption()
 		return 'Invalid File Format !'
+	return render_template("download.html")
 	
 @views.route('/download_data', methods=['GET', 'POST'])
 @login_required
@@ -119,3 +120,6 @@ def upload_key():
 			file.save(os.path.join(app.config['UPLOAD_KEY'], file.filename))
 			return start_decryption()
 		return 'Invalid File Format !'
+	return render_template("restore_success.html")
+
+
